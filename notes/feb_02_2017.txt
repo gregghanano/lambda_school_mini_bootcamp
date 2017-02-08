@@ -1,0 +1,19 @@
+HTTP request is a the client (browser) making a request to the computer (server) for text.
+HTTP protocol - how is our communication going to succeed?
+
+request line
+i.e. /blog/post/1
+ - the unique name/identifier of the resource we'd like to request
+ methods:
+ - GET /blog/post/1 HTTP/1.1
+ - POST
+ - DELETE
+ - PUT
+
+ HTTP/1.1 - specification of the particular version of protocol
+
+ headers
+
+ Key : Value
+
+ Content-Type : html
