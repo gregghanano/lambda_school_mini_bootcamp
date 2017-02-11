@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
 
@@ -29,3 +28,8 @@ def multiply(number1, number2):
 def subtract(number1, number2):
     result = int(number1) - int(number2)
     return number1 + " - " + number2 + " = " + str(result)
+
+@app.route('/favoritefoods')
+def favoriteFoods():
+    foods = ["burritos", "pizza", "sandwiches"]
+    return jsonify(foods)
