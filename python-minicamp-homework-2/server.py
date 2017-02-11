@@ -19,3 +19,13 @@ def greeting(name):
 def sum(number1, number2):
     result = int(number1) + int(number2)
     return number1 + " + " + number2 +" = " + str(result)
+
+@app.route('/multiply/<number1>/<number2>')
+def multiply(number1, number2):
+    result = int(number1) * int(number2)
+    return number1 + " * " + number2 + " = " + str(result)
+
+@app.route('/subtract/<number1>/<number2>')
+def subtract(number1, number2):
+    result = int(number1) - int(number2)
+    return number1 + " - " + number2 + " = " + str(result)
