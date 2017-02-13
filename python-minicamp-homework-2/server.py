@@ -33,3 +33,6 @@ def subtract(number1, number2):
 def favoriteFoods():
     foods = ["burritos", "pizza", "sandwiches"]
     return jsonify(foods)
+
+if __name__=="__main__":
+    app.run(debug=True)
