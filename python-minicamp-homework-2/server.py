@@ -31,7 +31,7 @@ def subtract(number1, number2):
 
 @app.route('/favoritefoods')
 def favoriteFoods():
-    foods = ["burritos", "pizza", "sandwiches"]
+    foods = ["burrito", "pizza", "sandwiches","burgers"]
     return jsonify(foods)
 
 if __name__=="__main__":
