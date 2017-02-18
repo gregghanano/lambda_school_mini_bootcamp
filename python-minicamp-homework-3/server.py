@@ -64,3 +64,17 @@ def search():
         #print(results);
         return jsonify(results)
         connection.close()
+@app.route('/drop')
+def drop():
+    connection = sqlite3.connect('database.db')
+    cursor = connection.cursor()
+    try:
+        cursor.execute('DROP TABLE foods')
+        connection.commit()
+        message = 'Table "foods" was dropped'
+    except:
+        connection.rollback()
+        message = "error dropping table"
+    finally:
+        return render_template('result.html', message = message)
+        connection.close()
