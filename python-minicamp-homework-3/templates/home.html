@@ -4,6 +4,11 @@
 <br>
 <h3><a href='/favorite'>Favorite foods</a></h3>
 <br>
+<form action="{{ url_for('search') }}" method="GET">
+    <h3>Search</h3>
+    <input type="text" name="name" />
+    <input type="submit" value='submit'/>
+</form>
 <br>
 <h3>Apply now for a chance to attend one of our immersive programs beginning in April 2017.</h3>
 <p>Our immersive programs combine small class sizes, world class instructors, a curriculum comprised of cutting edge technologies, and career counseling to help you begin a successful career as a software engineer.  All at a fraction of the cost of a traditional Computer Science degree.</p>

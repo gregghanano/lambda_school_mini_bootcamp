@@ -38,10 +38,29 @@ def favorite():
     try:
         cursor.execute('SELECT * FROM foods WHERE name = "pizza"')
         #print(cursor.fetchone())
-        connection.commit()
     except:
         connection.rollback()
         message = 'error in selecting favorite foods'
     finally:
         return jsonify(cursor.fetchone())
+        connection.close()
+
+@app.route('/search', methods=['GET'])
+def search():
+    connection = sqlite3.connect('database.db')
+    cursor = connection.cursor()
+    try:
+        name = request.args.get('name')
+        name = "%" + name + "%"
+        #print(name)
+        cursor.execute("SELECT * FROM foods WHERE name LIKE '%s'" % name)
+        #connection.commit()
+    except:
+        connection.rollback()
+        message = 'error in searching foods'
+    finally:
+        results = cursor.fetchall();
+        #print('these are the results: ');
+        #print(results);
+        return jsonify(results)
         connection.close()
