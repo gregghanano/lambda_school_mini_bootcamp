@@ -1,7 +1,14 @@
-<h1>My Friends</h1>
+<head>
+  <link rel='stylesheet' type='text/css' href='/static/styles/styles.css'>
+</head>
+<body>
+  <h1 class = 'header'>My Friends</h1>
 
-<form action='/new-friend' method='POST'>
-  <input name='name' placeholder="first name"/>
-  <input name='age' placeholder="age"/>
-  <input type='submit' value='Submit' />
-</form>
+  <form action='/new-friend' method='POST'>
+    <input name='name' placeholder="first name"/>
+    <input name='age' placeholder="age"/>
+    <input type='submit' value='Submit' />
+  </form>
+
+  <a id='friends-list' href='/friends'>Friends List</a>
+</body>

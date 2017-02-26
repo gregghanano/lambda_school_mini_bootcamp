@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import sqlite3
 
 app = Flask(__name__)
@@ -25,6 +25,14 @@ def new_friend():
         connection.close()
         return message
 
+@app.route('/friends')
+def friends():
+    connection = sqlite3.connect('database.db')
+    cursor = connection.cursor()
+    cursor.execute('SELECT * FROM friends')
+    friendsList = cursor.fetchall()
+    connection.close()
+    return jsonify(friendsList)
 
 
 app.run(debug = True)
